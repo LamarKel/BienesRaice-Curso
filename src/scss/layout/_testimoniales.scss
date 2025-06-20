@@ -1,0 +1,32 @@
+.testimoniales{
+    background-color: $verde;
+    font-size: 2.4rem;
+    padding: 2rem;
+    color: $blanco;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    blockquote {
+        margin: 0;
+        padding: 1rem;
+        padding-left: 5rem;
+        border-left: 4px solid $amarillo;
+        font-style: italic;
+        position: relative;
+
+        &::before{
+            content: '';
+            background-image: url(../img/comilla.svg);
+            background-repeat: no-repeat;
+            width: 6rem;
+            height: 8rem;
+            display: block;
+            position: absolute;
+            left: 0rem;
+        }
+    }
+    p{
+        text-align: right;
+        color: $blanco;
+    }
+}
