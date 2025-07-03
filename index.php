@@ -65,7 +65,7 @@
                  </picture>
              </div>
              <div class="texto-entrada">
-                 <a href="/entrada.php">
+                 <a href="entrada.php">
                      <h4>Terraza en el techo de tu casa</h4>
                      <p class="informacion-meta">Escrito el: <span>01/10/2023</span> por: <span>Admin</span></p>
                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
@@ -82,7 +82,7 @@
                  </picture>
              </div>
              <div class="texto-entrada">
-                 <a href="/entrada.php">
+                 <a href="entrada.php">
                      <h4>Guia para la decoracion de tu hogar</h4>
                      <p class="informacion-meta">Escrito el: <span>01/10/2023</span> por: <span>Admin</span></p>
                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>

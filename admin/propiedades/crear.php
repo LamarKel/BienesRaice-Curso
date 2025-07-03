@@ -1,9 +1,16 @@
 <?php
+require '../../includes/funciones.php';
+$auth = estaAutenticado();
+
+if (!$auth) {
+    header('Location: /bienesraices_inicio/index.php');
+    exit;
+}
 //Bse de dato
 require '../../includes/config/database.php';
 $db = conectarDB();
 
-require '../../includes/funciones.php';
+
 incluirTemple('header');
 
 $consultar = "SELECT * FROM vendedores";
@@ -20,7 +27,7 @@ $estacionamiento = '';
 $vendedores_id = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    
+
 
     $titulo = mysqli_real_escape_string($db, $_POST['titulo']);
     $precio = mysqli_real_escape_string($db, $_POST['precio']);
@@ -30,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $estacionamiento = mysqli_real_escape_string($db, $_POST['estacionamiento']);
     $vendedores_id = mysqli_real_escape_string($db, $_POST['vendedor']);
     $creado = mysqli_real_escape_string($db, date('Y/m/d'));
-     //var_dump($creado);
-     $imagen = $_FILES['imagen'];
+    //var_dump($creado);
+    $imagen = $_FILES['imagen'];
     // Validacion de campos
     if (!$titulo) {
         $errores[] = "Debes añadir un titulo";
@@ -54,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!$vendedores_id) {
         $errores[] = "Elige un vendedor";
     }
-    if( $imagen['error']) {
+    if ($imagen['error']) {
         $errores[] = "La imagen es obligatoria";
     }
     // Validar imagen
@@ -69,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Crear carpeta
         $carpetaImagenes = '../../imagenes/';
 
-        if(!is_dir($carpetaImagenes)){
+        if (!is_dir($carpetaImagenes)) {
             mkdir($carpetaImagenes);
         }
         // Generar nombre unico
@@ -93,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <main class="contenedor seccion">
     <h1>Crear</h1>
 
-    <a href="/admin/index.php" class="boton boton-verde">Volver</a>
+    <a href="/bienesraices_inicio/admin/index.php" class="boton boton-verde">Volver</a>
     <?php foreach ($errores as $error) : ?>
         <div class="alerta error">
             <?php echo $error; ?>

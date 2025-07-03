@@ -1,10 +1,11 @@
 <?php
 require '../includes/funciones.php';
- $auth = estaAutenticado();
+$auth = estaAutenticado();
 
- if(!$auth){
-    header('Location:/');
- }
+if (!$auth) {
+    header('Location: /bienesraices_inicio/index.php');
+    exit;
+}
 //Bse de dato
 require '../includes/config/database.php';
 $db = conectarDB();
@@ -14,7 +15,7 @@ $resultadoConultas = "SELECT * FROM propiedades";
 // Obtener resultados
 $resultadoConultas = mysqli_query($db, $resultadoConultas);
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Eliminar
     $id = $_POST['id'];
     $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -27,12 +28,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         // Eliminar la propiedad
         $query = "DELETE FROM propiedades WHERE id = $id";
         $resultado = mysqli_query($db, $query);
-     
+
         if ($resultado) {
             header('Location: ../admin?resultado=3');
         }
     }
-
 }
 
 $resultado = $_GET['resultado'] ?? null;
@@ -71,7 +71,7 @@ incluirTemple('header');
                     <td>$ <?php echo $propiedad['precio'] ?> </td>
                     <td>
                         <a href="../admin/propiedades/editar.php?id=<?php echo $propiedad['id'] ?>" class="boton boton-amarillo-block">Actualizar</a>
-                       <form method="POST" class="w-100">
+                        <form method="POST" class="w-100">
 
                             <input type="hidden" name="id" value="<?php echo $propiedad['id'] ?>">
 

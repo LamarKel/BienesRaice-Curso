@@ -30,6 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 session_start();
                 $_SESSION['usuario'] = $usuario['email'];
                 $_SESSION['login'] = true;
+
+               header('Location: /bienesraices_inicio/admin/index.php');
+               exit;
             } else {
                 $errores[] = 'Password incorrecto';
             }

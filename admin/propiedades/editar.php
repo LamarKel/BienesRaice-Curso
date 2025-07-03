@@ -1,4 +1,10 @@
 <?php
+require '../../includes/funciones.php';
+ $auth = estaAutenticado();
+
+ if(!$auth){
+    header('Location:/');
+ }
 //Validar
 $id = $_GET['id'];
 $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -107,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-require '../../includes/funciones.php';
+
 incluirTemple('header');
 
 ?>
@@ -115,7 +121,7 @@ incluirTemple('header');
 <main class="contenedor seccion">
     <h1>Actualizar Propiedades</h1>
 
-    <a href="/admin/index.php" class="boton boton-verde">Volver</a>
+    <a href="/bienesraices_inicio/admin/index.php" class="boton boton-verde">Volver</a>
     <?php foreach ($errores as $error) : ?>
         <div class="alerta error">
             <?php echo $error; ?>
