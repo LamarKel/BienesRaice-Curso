@@ -41,7 +41,7 @@
 
 
      <div class="ver-todas alinear-derecha">
-         <a href="/anuncios.php" class="boton boton-verde">Ver Todas</a>
+         <a href="anuncios.php" class="boton boton-verde">Ver Todas</a>
      </div>
  </section>
  <section class="imagen-contacto">

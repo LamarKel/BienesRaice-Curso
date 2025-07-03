@@ -16,7 +16,7 @@ if (!$resultado) {
     <?php while ($propiedad = mysqli_fetch_assoc($resultado)) : ?>
         <div class="anuncio">
 
-            <img loading="lazy" src="/imagenes/<?php echo $propiedad['imagen'] ?>" alt="<?php echo $propiedad['titulo']; ?>">
+            <img loading="lazy" src="/bienesraices_inicio/imagenes/<?php echo $propiedad['imagen'] ?>" alt="<?php echo $propiedad['titulo']; ?>">
 
 
             <div class="contenido-anuncio">
@@ -37,7 +37,7 @@ if (!$resultado) {
                         <p><?php echo $propiedad['habitaciones']; ?></p>
                     </li>
                 </ul>
-                <a href="/anuncios.php?id=<?php echo $propiedad['id']; ?>" class="boton boton-amarillo-block">
+                <a href="anuncio.php?id=<?php echo $propiedad['id']; ?>" class="boton boton-amarillo-block">
                     Ver Propiedad
                 </a>
             </div> <!--Contenido del anuncio-->

@@ -30,7 +30,7 @@
                         <a href="contacto.php">Contacto</a>
                     </nav>
                 </div>
-
+                <?php if ($inicio) echo '<h1>Venta de Casas y Departamentos Exclusivos</h1>'; ?>
             </div>
         </div>
 
