@@ -49,6 +49,7 @@ incluirTemple('header');
         <p class="alerta exito">Propiedad Actualizada Correctamente</p>
     <?php endif ?>
     <a href="../admin/propiedades/crear.php" class="boton boton-verde">Crear Propiedades</a>
+    <a href="../admin/propiedades/vendedor.php" class="boton boton-verde">Crear vendedor</a>
 
     <table class="propiedades">
         <thead>

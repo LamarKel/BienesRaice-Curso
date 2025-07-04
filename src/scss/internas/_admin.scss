@@ -36,3 +36,12 @@ table.propiedades {
   }
 
 }
+@include tablet{
+    .vendedor{
+        @include grid(2, 2rem);
+    }
+}
+table.vendedor-contenido{
+  margin-top: 4rem;
+  
+}
